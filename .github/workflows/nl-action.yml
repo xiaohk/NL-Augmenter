@@ -5,7 +5,7 @@ name: NL-Augmenter Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ emojify-test ]
   pull_request:
     branches: [ main ]
 
