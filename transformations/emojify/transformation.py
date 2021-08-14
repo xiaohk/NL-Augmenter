@@ -25,7 +25,7 @@ def emojify(sentence, nlp, word_to_emoji, prob=1.0, seed=0, max_outputs=1):
 
             # Handle numeric tokens
             if lemma.isnumeric():
-                if random.random() < prob:
+                if random.random() <= prob:
                     for digit in list(lemma):
                         emoji = digit
                         if digit in word_to_emoji:
@@ -40,7 +40,7 @@ def emojify(sentence, nlp, word_to_emoji, prob=1.0, seed=0, max_outputs=1):
 
             elif lemma in word_to_emoji:
                 # We have `prob` chance to replace this token with emoji
-                if random.random() < prob:
+                if random.random() <= prob:
 
                     # Randomly choose a emoji candidate for this token
                     emoji = random.choice(word_to_emoji[lemma])
@@ -90,7 +90,7 @@ class EmojifyTransformation(SentenceOperation):
             sentence,
             self.nlp,
             self.word_to_emoji,
-            prob=1,
+            prob=1.0,
             seed=self.seed,
             max_outputs=self.max_outputs,
         )
