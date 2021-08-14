@@ -9,7 +9,7 @@ from interfaces.SentenceOperation import SentenceOperation
 from tasks.TaskTypes import TaskType
 
 
-def emojify(sentence, nlp, word_to_emoji, prob=1, seed=0, max_outputs=1):
+def emojify(sentence, nlp, word_to_emoji, prob=1.0, seed=0, max_outputs=1):
 
     random.seed(seed)
     doc = nlp(sentence)
