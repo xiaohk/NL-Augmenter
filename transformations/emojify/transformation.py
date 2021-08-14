@@ -79,7 +79,8 @@ class EmojifyTransformation(SentenceOperation):
         self.word_to_emoji = load(open(dict_path, "r"))
 
         # Load the spacy nlp
-        self.nlp = spacy_nlp if spacy_nlp else spacy.load("en_core_web_sm")
+        self.nlp2 = spacy_nlp if spacy_nlp else spacy.load("en_core_web_sm")
+        self.nlp = spacy.load("en_core_web_sm")
 
     def generate(self, sentence: str):
         """
